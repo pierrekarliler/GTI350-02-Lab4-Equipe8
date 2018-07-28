@@ -1,0 +1,33 @@
+<div id="signin">
+    <div layout="column">
+        <div layout="row" layout-align="end start" flex="15">
+        </div>
+        <div layout="row" layout-align="center center" layout-padding flex>
+            <md-card layout="column" layout-align="center center" flex="35">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Identification</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content style="width: 100%;">
+                    <form name="signInForm">
+                        <div layout="column">
+                            <md-input-container flex>
+                                <label>Nom d'utilisateur</label>
+                                <input>
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>Mot de passe</label>
+                                <input type="password">
+                            </md-input-container>
+                        </div>
+                    </form>
+                </md-card-content>
+                <md-card-actions layout="column" layout-align="end center">
+                    <md-button ng-click="ctrl.signIn()">S'identifier</md-button>
+                    <a style="font-size: 14; padding-top: 15px; color: black;" href="#!/ForgotPassword">J'ai oublié mon mot de passe</a>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </div>
+</div>
