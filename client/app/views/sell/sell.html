@@ -1,0 +1,162 @@
+<div>
+    <div layout="column">
+        <div style="font-weight: 800; font-size: x-large;" layout="row" layout-align="center center" layout-padding flex="5">
+            Joueurs
+        </div>
+
+        <div ng-if="!ctrl.vendreToggle && !ctrl.achat" layout="column" flex>
+
+                <div layout="row" layout-padding flex="10">
+                        <md-input-container flex="70">
+                            <label>Filtre</label>
+                            <input ng-model="ctrl.filter">
+                        </md-input-container>
+                        <span></span flex="10">
+                        <md-button class="md-raised md-primary" ng-click="ctrl.toggleVendre()" flex>Vendre un joueur</md-button>
+                    </div>
+
+            <div layout-padding flex>
+                <div layout="row" layout-align="center center" layout-padding flex>
+                    <span style="font-weight: bold;" flex>Nom</span>
+                    <span style="font-weight: bold;" flex>Prénom</span>
+                    <span style="font-weight: bold;" flex>Club Actuel</span>
+                    <span style="font-weight: bold;" flex>Numéro</span>
+                    <span style="font-weight: bold;" flex>Nationalité</span>
+                    <span style="font-weight: bold;" flex>Prix</span>
+                    <span flex></span>
+                </div>
+                <div ng-repeat="player in ctrl.players | filter : ctrl.filter track by $index" layout="row" layout-align="center center"
+                    layout-padding flex>
+                    <span flex>{{player.nom}}</span>
+                    <span flex>{{player.prenom}}</span>
+                    <span flex>{{player.club}}</span>
+                    <span flex>{{player.numero}}</span>
+                    <span flex>{{player.nationalite}}</span>
+                    <span flex>{{player.prix}}</span>
+                    <span flex>
+                        <md-button ng-click="ctrl.toggleAchat()">
+                            <md-icon class="material-icons">navigate_next</md-icon>
+                        </md-button>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div ng-if="ctrl.vendreToggle" layout="column" flex>
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Vendre un joueur</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                    <form name="signInForm">
+                        <div layout="column" flex>
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Joueur</label>
+                                <md-select ng-model="ctrl.player">
+                                    <md-option ng-repeat="player in ctrl.players" value="{{player}}">
+                                        {{player.prenom}} {{ player.nom}}
+                                    </md-option>
+                                </md-select>
+                            </md-input-container>
+                            <div layout="row">
+                                <md-input-container flex>
+                                    <label>Prix minimum</label>
+                                    <input ng-model="ctrl.player.club">
+                                </md-input-container>
+                                <md-input-container class="md-block" flex="20">
+                                    <label>Devise</label>
+                                    <md-select ng-model="ctrl.devise1">
+                                        <md-option ng-repeat="devise in ctrl.devises" value="{{devise}}">
+                                            {{devise}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                            </div>
+                            <div layout="row">
+                                    <md-input-container flex>
+                                        <label>Prix Achat Instantanné</label>
+                                        <input ng-model="ctrl.player.club">
+                                    </md-input-container>
+                                    <md-input-container class="md-block" flex="20">
+                                        <label>Devise</label>
+                                        <md-select ng-model="ctrl.devise2">
+                                            <md-option ng-repeat="devise in ctrl.devises" value="{{devise}}">
+                                                {{devise}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                            <md-input-container flex>
+                                <label>Date limite de la vente</label>
+                                <input ng-model="ctrl.player.nationalite">
+                            </md-input-container>
+                        </div>
+                    </form>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button ng-click="ctrl.toggleVendre()">Annuler</md-button>
+                    <md-button ng-click="ctrl.vendre()">Mettre à vendre</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+
+        <div ng-if="ctrl.achat" layout="column" flex>
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-text>
+                            <span class="md-headline">Transaction pour Suárez, L.</span>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                        <form name="signInForm">
+                            <div layout="column" flex>
+                                <md-input-container flex>
+                                    <label>Joueur</label>
+                                    <input ng-model="ctrl.player.nom">
+                                </md-input-container>
+                                <div layout="row">
+                                    <md-input-container flex>
+                                        <label>Prix minimum</label>
+                                        <input ng-model="ctrl.player.prix_min">
+                                    </md-input-container>
+                                </div>
+                                <div layout="row">
+                                        <md-input-container flex>
+                                            <label>Prix Achat Instantanné</label>
+                                            <input ng-model="ctrl.player.prix_buyout">
+                                        </md-input-container>
+                                    </div>
+                                <md-input-container flex>
+                                    <label>Date limite de la vente</label>
+                                    <input ng-model="ctrl.player.date_limite">
+                                </md-input-container>
+                            </div>
+                            <div style="font-weight: 600; font-size: large;" layout="row" layout-align="center center" layout-padding flex="5">
+                                    Offre
+                            </div>
+                            <div layout="row">
+                                    <md-input-container flex>
+                                        <label>Offre d'achat</label>
+                                        <input ng-model="ctrl.montant">
+                                    </md-input-container>
+                                    <md-input-container class="md-block" flex="20">
+                                        <label>Devise</label>
+                                        <md-select ng-model="ctrl.devise3">
+                                            <md-option ng-repeat="devise in ctrl.devises" value="{{devise}}">
+                                                {{devise}}
+                                            </md-option>
+                                        </md-select>
+                                    </md-input-container>
+                                </div>
+                        </form>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button ng-click="ctrl.confirmBuy()">Acheter Instantannément</md-button>
+                        <md-button ng-click="ctrl.confirmBuy()">Faire l'offre</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+    </div>
+</div>

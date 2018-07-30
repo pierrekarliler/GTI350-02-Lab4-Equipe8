@@ -1,0 +1,50 @@
+<div>
+        <div layout="column">
+            <div style="font-weight: 800; font-size: x-large;" layout="row" layout-align="center center" layout-padding flex="5">
+                Joueur
+            </div>
+    
+            <div layout="column" flex>
+                <md-card>
+                    <md-card-content>
+                        <form name="signInForm">
+                            <div layout="column" flex>
+                                <md-input-container flex>
+                                    <label>Nom</label>
+                                    <input ng-model="ctrl.player.nom">
+                                </md-input-container>
+                                <md-input-container flex>
+                                    <label>Prénom</label>
+                                    <input ng-model="ctrl.player.prenom">
+                                </md-input-container>
+                                <md-input-container flex>
+                                    <label>Anniversaire</label>
+                                    <input ng-model="ctrl.player.anniversaire">
+                                </md-input-container>
+                                <md-input-container flex>
+                                    <label>Taille</label>
+                                    <input ng-model="ctrl.player.taille">
+                                </md-input-container>
+                                <md-input-container flex>
+                                    <label>Club Actuel</label>
+                                    <input ng-model="ctrl.player.club">
+                                </md-input-container>
+                                <md-input-container flex>
+                                    <label>Numéro</label>
+                                    <input ng-model="ctrl.player.numero">
+                                </md-input-container>
+                                <md-input-container flex>
+                                    <label>Nationalité</label>
+                                    <input ng-model="ctrl.player.nationalite">
+                                </md-input-container>
+                            </div>
+                        </form>
+                    </md-card-content>
+                    <md-card-actions layout="row" layout-align="end center">
+                        <md-button ng-click="ctrl.toggleAjouter()">Annuler</md-button>
+                        <md-button ng-click="ctrl.ajouterJoueur()">Enregistrer</md-button>
+                    </md-card-actions>
+                </md-card>
+            </div>
+        </div>
+    </div>

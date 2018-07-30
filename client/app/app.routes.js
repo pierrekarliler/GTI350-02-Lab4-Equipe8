@@ -42,6 +42,26 @@ angular.module('ichiba').config(['$stateProvider', '$urlRouterProvider', functio
                 }
             }
         })
+        .state('app.Player', {
+            url: '/Player',
+            views: {
+                'content': {
+                    templateUrl: 'app/views/player/player.html',
+                    controller: 'PlayerCtrl',
+                    controllerAs: 'ctrl'
+                }
+            }
+        })
+        .state('app.Sell', {
+            url: '/Sell',
+            views: {
+                'content': {
+                    templateUrl: 'app/views/sell/sell.html',
+                    controller: 'SellCtrl',
+                    controllerAs: 'ctrl'
+                }
+            }
+        })
 
     $urlRouterProvider.otherwise('/SignIn');
 

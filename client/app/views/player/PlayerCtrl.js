@@ -1,23 +1,17 @@
-angular.module('ichiba').controller('PlayersCtrl', ['$scope', '$state', '$stateParams', function ($scope, $state, $stateParams) {
+angular.module('ichiba').controller('PlayerCtrl', ['$scope', '$state', '$stateParams', function ($scope, $state, $stateParams) {
     
-    this.ajouter = false;
-
-    this.toggleAjouter = () => this.ajouter = !this.ajouter;
-
-    this.goToPlayer = () => $state.go('app.Player');
 
     this.player =  {
-        nom: '',
-        prenom: '',
-        anniversaire: '',
-        taille: '',
-        club: '',
-        numero: '',
-        nationalite: ''
+        nom: 'Ronaldo',
+        prenom: 'Cristiano',
+        club: 'Juventus F.C.',
+        numero: '93',
+        nationalite: 'Portugal',
+        anniversaire: '5 février 1985',
+        taille: '1.87m',
     }
 
     this.ajouterJoueur = () => {
-        alert('Opération réalisée avec succès.')
         this.players.push(this.player);
         this.player = {
             nom: '',

@@ -1,23 +1,26 @@
-angular.module('ichiba').controller('PlayersCtrl', ['$scope', '$state', '$stateParams', function ($scope, $state, $stateParams) {
+angular.module('ichiba').controller('SellCtrl', ['$scope', '$state', '$stateParams', function ($scope, $state, $stateParams) {
     
-    this.ajouter = false;
+    this.vendreToggle = false;
 
-    this.toggleAjouter = () => this.ajouter = !this.ajouter;
+    this.achat = false;
 
-    this.goToPlayer = () => $state.go('app.Player');
+    this.toggleVendre = () => this.vendreToggle = !this.vendreToggle;
 
-    this.player =  {
-        nom: '',
-        prenom: '',
-        anniversaire: '',
-        taille: '',
-        club: '',
-        numero: '',
-        nationalite: ''
+    this.toggleAchat = () => this.achat = !this.achat;
+
+    this.player = {
+        nom: 'Luis Suárez',
+        prix_min: '103.5M EUR',
+        prix_buyout: '155M EUR',
+        date_limite: '18-10-2018'
+    }
+
+    this.confirmBuy = () => {
+        alert('Opération réalisée avec succès.')
+        this.toggleAchat();
     }
 
     this.ajouterJoueur = () => {
-        alert('Opération réalisée avec succès.')
         this.players.push(this.player);
         this.player = {
             nom: '',
@@ -30,6 +33,13 @@ angular.module('ichiba').controller('PlayersCtrl', ['$scope', '$state', '$stateP
         }
         this.toggleAjouter();
     }
+
+    this.vendre = () => {
+        alert('Opération réalisée avec succès.')
+        this.toggleVendre();
+    }
+
+    this.devises = ['CAD', 'USD', 'EUR']
 
     this.players = [{
         nom: 'Ronaldo',

@@ -70,7 +70,7 @@ angular.module('ichiba').controller('MenuCtrl', ['$scope', '$state', '$statePara
     }, {
         tooltip: 'Vendre un joueur',
         icon: 'accessibility',
-        state: ''
+        state: 'app.Sell'
     }, {
         tooltip: 'F.A.Q.',
         icon: 'feedback',
