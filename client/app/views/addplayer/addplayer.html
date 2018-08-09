@@ -1,49 +1,15 @@
 <div>
     <div layout="column">
         <div style="font-weight: 800; font-size: x-large;" layout="row" layout-align="center center" layout-padding flex="5">
-            Joueurs
+            Ajouter un joueur
         </div>
 
-        <div ng-if="!ctrl.ajouter" layout="column" flex>
-
-            <div layout="row" layout-padding flex="10">
-                <md-input-container flex="70">
-                    <label>Filtre</label>
-                    <input ng-model="ctrl.filter">
-                </md-input-container>
-                <md-button ng-click="ctrl.showAdvanced()" flex="5">
-                        <md-icon class="material-icons">more_horiz</md-icon>
-                </md-button>
-                <!-- <md-button class="md-raised md-primary" ng-click="ctrl.toggleAjouter()" flex>Ajouter un joueur</md-button> -->
-            </div>
-
-            <div layout-padding flex>
-                <div layout="row" layout-align="center center" layout-padding flex>
-                    <span style="font-weight: bold;" flex>Nom</span>
-                    <span style="font-weight: bold;" flex>Prénom</span>
-                    <span style="font-weight: bold;" flex>Club Actuel</span>
-                    <span style="font-weight: bold;" flex>Numéro</span>
-                    <span style="font-weight: bold;" flex>Nationalité</span>
-                    <span style="font-weight: bold;" flex>Prix</span>
-
-                </div>
-                <div ng-repeat="player in ctrl.players | filter : ctrl.filter track by $index" ng-click="ctrl.goToPlayer()" layout="row" layout-align="center center" layout-padding flex>
-                    <span flex>{{player.nom}}</span>
-                    <span flex>{{player.prenom}}</span>
-                    <span flex>{{player.club}}</span>
-                    <span flex>{{player.numero}}</span>
-                    <span flex>{{player.nationalite}}</span>
-                    <span flex>{{player.prix}}</span>
-                </div>
-            </div>
-        </div>
-
-        <div ng-if="ctrl.ajouter" layout="column" flex>
+        <div layout="column" flex>
             <md-card>
                 <md-card-title>
-                    <md-card-title-text>
+                    <!-- <md-card-title-text>
                         <span class="md-headline">Ajouter un joueur</span>
-                    </md-card-title-text>
+                    </md-card-title-text> -->
                 </md-card-title>
                 <md-card-content>
                     <form name="signInForm">

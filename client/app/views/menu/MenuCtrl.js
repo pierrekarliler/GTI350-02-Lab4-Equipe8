@@ -68,6 +68,10 @@ angular.module('ichiba').controller('MenuCtrl', ['$scope', '$state', '$statePara
         icon: 'group',
         state: 'app.Players'
     }, {
+        tooltip: 'Ajouter un joueur',
+        icon: 'person_add',
+        state: 'app.AddPlayer'
+    }, {
         tooltip: 'Marché',
         icon: 'shopping_cart',
         state: 'app.Sell'

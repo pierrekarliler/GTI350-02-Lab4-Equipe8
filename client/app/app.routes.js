@@ -68,6 +68,16 @@ angular.module('ichiba').config(['$stateProvider', '$urlRouterProvider', functio
                 }
             }
         })
+        .state('app.AddPlayer', {
+            url: '/AddPlayer',
+            views: {
+                'content': {
+                    templateUrl: 'app/views/addplayer/addplayer.html',
+                    controller: 'AddPlayerCtrl',
+                    controllerAs: 'ctrl'
+                }
+            }
+        })
         .state('app.Sell', {
             url: '/Sell',
             views: {
