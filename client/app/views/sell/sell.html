@@ -8,7 +8,7 @@
 
                 <div layout="row" layout-padding flex="10">
                         <md-input-container flex="70">
-                            <label>Filtre</label>
+                            <label>Rechercher</label>
                             <input ng-model="ctrl.filter">
                         </md-input-container>
                         <span></span flex="10">
@@ -25,7 +25,7 @@
                     <span style="font-weight: bold;" flex>Prix</span>
                     <span flex></span>
                 </div>
-                <div ng-repeat="player in ctrl.players | filter : ctrl.filter track by $index" layout="row" layout-align="center center"
+                <div style="border-bottom: 1px solid;" ng-repeat="player in ctrl.players | filter : ctrl.filter track by $index" layout="row" layout-align="center center"
                     layout-padding flex>
                     <span flex>{{player.nom}}</span>
                     <span flex>{{player.prenom}}</span>
@@ -34,7 +34,7 @@
                     <span flex>{{player.nationalite}}</span>
                     <span flex>{{player.prix}}</span>
                     <span flex>
-                        <md-button ng-if="player.prix" ng-click="ctrl.toggleAchat()">
+                        <md-button class="md-raised" ng-if="player.prix" ng-click="ctrl.toggleAchat()">
                             <md-icon class="material-icons">add_shopping_carte</md-icon>
                         </md-button>
                     </span>

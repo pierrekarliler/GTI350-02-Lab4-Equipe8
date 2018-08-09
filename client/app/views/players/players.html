@@ -8,10 +8,10 @@
 
             <div layout="row" layout-padding flex="10">
                 <md-input-container flex="70">
-                    <label>Filtre</label>
+                    <label>Rechercher</label>
                     <input ng-model="ctrl.filter">
                 </md-input-container>
-                <md-button ng-click="ctrl.showAdvanced()" flex="5">
+                <md-button class="md-raised" ng-click="ctrl.showAdvanced()" flex="30">
                     <label>Ajouter filtre(s)</label>
                 </md-button>
                 <!-- <md-button class="md-raised md-primary" ng-click="ctrl.toggleAjouter()" flex>Ajouter un joueur</md-button> -->
@@ -27,15 +27,15 @@
                     <span style="font-weight: bold;" flex>Prix</span>
 
                 </div>
-                <div ng-repeat="player in ctrl.players | filter : ctrl.filter track by $index" ng-click="ctrl.goToPlayer()" layout="row" layout-align="center center" layout-padding flex>
+                <div style="border-bottom: 1px solid;margin-bottom: 5px;" ng-repeat="player in ctrl.players | filter : ctrl.filter track by $index" ng-click="ctrl.goToPlayer()" layout="row" layout-align="center center" layout-padding flex>
                     <span flex>{{player.nom}}</span>
                     <span flex>{{player.prenom}}</span>
                     <span flex>{{player.club}}</span>
                     <span flex>{{player.numero}}</span>
                     <span flex>{{player.nationalite}}</span>
                     <span flex>{{player.prix}}</span>
-                    <br />
                 </div>
+
             </div>
         </div>
 
