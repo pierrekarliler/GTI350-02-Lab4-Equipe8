@@ -1,4 +1,4 @@
-angular.module('ichiba').controller('FeedCtrl', ['$scope', '$stateParams', function ($scope, $stateParams) {
+angular.module('ichiba').controller('FeedCtrl', ['$scope', '$state', '$stateParams', function ($scope, $state, $stateParams) {
     this.newsList = [{
         picture: 'app/assets/ronaldo.png',
         name: 'Cristiano Ronaldo',
@@ -27,4 +27,8 @@ angular.module('ichiba').controller('FeedCtrl', ['$scope', '$stateParams', funct
         duration: '4 ans',
         date: '14-01-2018',
     }]
+
+    this.goToTransaction = () => {
+        $state.go('app.Transaction')
+    }
 }])

@@ -11,7 +11,9 @@
                     <label>Filtre</label>
                     <input ng-model="ctrl.filter">
                 </md-input-container>
-                <span></span flex="10">
+                <md-button ng-click="ctrl.showAdvanced()" flex="5">
+                        <md-icon class="material-icons">more_horiz</md-icon>
+                </md-button>
                 <md-button class="md-raised md-primary" ng-click="ctrl.toggleAjouter()" flex>Ajouter un joueur</md-button>
             </div>
 
@@ -23,7 +25,7 @@
                     <span style="font-weight: bold;" flex>Numéro</span>
                     <span style="font-weight: bold;" flex>Nationalité</span>
                     <span style="font-weight: bold;" flex>Prix</span>
-                    <span flex></span>
+
                 </div>
                 <div ng-repeat="player in ctrl.players | filter : ctrl.filter track by $index" ng-click="ctrl.goToPlayer()" layout="row" layout-align="center center" layout-padding flex>
                     <span flex>{{player.nom}}</span>
@@ -32,10 +34,6 @@
                     <span flex>{{player.numero}}</span>
                     <span flex>{{player.nationalite}}</span>
                     <span flex>{{player.prix}}</span>
-                    <span flex>
-                        <md-icon ng-if="player.prix" ng-click="null" class="material-icons">navigate_next</md-icon>
-                        <div ng-if="!player.prix"></div>
-                    </span>
                 </div>
             </div>
         </div>

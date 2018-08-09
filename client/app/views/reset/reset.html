@@ -1,0 +1,32 @@
+<div id="signin">
+    <div layout="column">
+        <div layout="row" layout-align="end start" flex="15">
+        </div>
+        <div layout="row" layout-align="center center" layout-padding flex>
+            <md-card layout="column" layout-align="center center" flex="35">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Réinitialiser le mot de passe</span>
+                    </md-card-title-text>
+                </md-card-title>
+                <md-card-content style="width: 100%;">
+                    <form name="signInForm">
+                        <div layout="column">
+                            <md-input-container flex>
+                                <label>Nouveau mot de passe</label>
+                                <input type="password">
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>Retaper votre nouveau mot de passe</label>
+                                <input type="password">
+                            </md-input-container>
+                        </div>
+                    </form>
+                </md-card-content>
+                <md-card-actions layout="column" layout-align="end center">
+                    <md-button ng-click="ctrl.validate()">Réinitialiser mon mot de passe</md-button>
+                </md-card-actions>
+            </md-card>
+        </div>
+    </div>
+</div>

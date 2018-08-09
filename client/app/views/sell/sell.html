@@ -1,7 +1,7 @@
 <div>
     <div layout="column">
         <div style="font-weight: 800; font-size: x-large;" layout="row" layout-align="center center" layout-padding flex="5">
-            Joueurs
+            Marché
         </div>
 
         <div ng-if="!ctrl.vendreToggle && !ctrl.achat" layout="column" flex>
@@ -34,8 +34,8 @@
                     <span flex>{{player.nationalite}}</span>
                     <span flex>{{player.prix}}</span>
                     <span flex>
-                        <md-button ng-click="ctrl.toggleAchat()">
-                            <md-icon class="material-icons">navigate_next</md-icon>
+                        <md-button ng-if="player.prix" ng-click="ctrl.toggleAchat()">
+                            <md-icon class="material-icons">add_shopping_carte</md-icon>
                         </md-button>
                     </span>
                 </div>

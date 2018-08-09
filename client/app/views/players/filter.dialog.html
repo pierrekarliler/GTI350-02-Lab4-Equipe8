@@ -1,0 +1,35 @@
+<md-card>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">Filtres avancés</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <form name="signInForm">
+                <div layout="column" flex>
+                    <div layout="row" flex>
+                    <md-input-container flex>
+                        <label>Prix Minimum</label>
+                        <input ng-model="ctrl.player.nom">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Prix Maximum</label>
+                        <input ng-model="ctrl.player.prenom">
+                    </md-input-container>
+                    </div>
+                    <md-input-container flex>
+                        <label>Nationalité</label>
+                        <input ng-model="ctrl.player.anniversaire">
+                    </md-input-container>
+                    <md-input-container flex>
+                        <label>Club</label>
+                        <input ng-model="ctrl.player.taille">
+                    </md-input-container>
+                </div>
+            </form>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button ng-click="ctrl.toggleAjouter()">Annuler</md-button>
+            <md-button ng-click="ctrl.ajouterJoueur()">Enregistrer</md-button>
+        </md-card-actions>
+    </md-card>

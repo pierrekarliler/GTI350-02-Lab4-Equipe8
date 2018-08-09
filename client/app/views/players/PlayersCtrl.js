@@ -1,12 +1,12 @@
-angular.module('ichiba').controller('PlayersCtrl', ['$scope', '$state', '$stateParams', function ($scope, $state, $stateParams) {
-    
+angular.module('ichiba').controller('PlayersCtrl', ['$scope', '$state', '$stateParams', '$mdDialog', function ($scope, $state, $stateParams, $mdDialog) {
+
     this.ajouter = false;
 
     this.toggleAjouter = () => this.ajouter = !this.ajouter;
 
     this.goToPlayer = () => $state.go('app.Player');
 
-    this.player =  {
+    this.player = {
         nom: '',
         prenom: '',
         anniversaire: '',
@@ -29,6 +29,36 @@ angular.module('ichiba').controller('PlayersCtrl', ['$scope', '$state', '$stateP
             nationalite: ''
         }
         this.toggleAjouter();
+    }
+
+    this.showAdvanced = function (ev) {
+        $mdDialog.show({
+            controller: DialogController,
+            templateUrl: 'app/views/players/filter.dialog.html',
+            parent: angular.element(document.body),
+            targetEvent: ev,
+            clickOutsideToClose: true,
+            fullscreen: $scope.customFullscreen // Only for -xs, -sm breakpoints.
+        })
+            .then(function (answer) {
+
+            }, function () {
+
+            });
+    };
+
+    function DialogController($scope, $mdDialog) {
+        $scope.hide = function () {
+            $mdDialog.hide();
+        };
+
+        $scope.cancel = function () {
+            $mdDialog.cancel();
+        };
+
+        $scope.answer = function (answer) {
+            $mdDialog.hide(answer);
+        };
     }
 
     this.players = [{

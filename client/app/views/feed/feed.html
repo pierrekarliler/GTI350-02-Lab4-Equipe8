@@ -5,7 +5,7 @@
         </div>
         <div flex="10"></div>
         <div flex>
-            <md-card ng-repeat="news in ctrl.newsList" layout="row" layout-align="center center" flex>
+            <md-card ng-repeat="news in ctrl.newsList" ng-click="ctrl.goToTransaction()" layout="row" layout-align="center center" flex>
                 <div layout="column" layout-align="center center" flex>
                     <img style="max-width: 100px; max-height: 100px" ng-src="{{news.picture}}" class="md-avatar"/>
                     <span style="font-weight: bold;">{{ news.name }}</span>

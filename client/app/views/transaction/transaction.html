@@ -1,0 +1,49 @@
+<div>
+    <div layout="column">
+        <div style="font-weight: 800; font-size: x-large;" layout="row" layout-align="center center" layout-padding flex="5">
+            Transaction #2937482
+        </div>
+
+        <div layout="column" flex>
+            <md-card>
+                <md-card-content>
+                    <form name="signInForm">
+                        <div layout="row" flex>>
+                            <div layout="column" layout-align="start center" flex="50" layout-padding>
+                                <img style="width: 450;" ng-src="app/assets/ronaldo.png" class="md-avatar"/>
+                            </div>
+                                <div layout="column" flex>
+                            <md-input-container flex>
+                                <label>Nom Complet</label>
+                                <input ng-model="ctrl.tran.nom">
+                            </md-input-container>
+                            
+                                <md-input-container flex>
+                                    <label>Ancien Club</label>
+                                    <input ng-model="ctrl.tran.ancien">
+                                </md-input-container>
+                                <md-input-container flex>
+                                    <label>Nouveau Club</label>
+                                    <input ng-model="ctrl.tran.nouveau">
+                                </md-input-container>
+
+                            <md-input-container flex>
+                                <label>Prix</label>
+                                <input ng-model="ctrl.tran.prix">
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>Salaire</label>
+                                <input ng-model="ctrl.tran.salaire">
+                            </md-input-container>
+                            <md-input-container flex>
+                                <label>Durée</label>
+                                <input ng-model="ctrl.tran.duree">
+                            </md-input-container>
+                        </div>
+                        </div>
+                    </form>
+                </md-card-content>
+            </md-card>
+        </div>
+    </div>
+</div>
