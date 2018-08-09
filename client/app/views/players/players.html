@@ -12,7 +12,7 @@
                     <input ng-model="ctrl.filter">
                 </md-input-container>
                 <md-button ng-click="ctrl.showAdvanced()" flex="5">
-                        <md-icon class="material-icons">more_horiz</md-icon>
+                    <label>Ajouter filtre(s)</label>
                 </md-button>
                 <md-button class="md-raised md-primary" ng-click="ctrl.toggleAjouter()" flex>Ajouter un joueur</md-button>
             </div>
@@ -34,6 +34,7 @@
                     <span flex>{{player.numero}}</span>
                     <span flex>{{player.nationalite}}</span>
                     <span flex>{{player.prix}}</span>
+                    <br />
                 </div>
             </div>
         </div>
